@@ -58,11 +58,14 @@
         .signup_info{
             width: 400px;
             height: 354px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .signup_form{
             width: 392px;
             margin: 0 0 0 24px;
-            padding: 74px 36px 60px 36px;
+            padding: 36px;
             position: relative;
             font-weight: 400;
         }
@@ -91,9 +94,9 @@
             position: relative;
         }
         .signup_form input{
-            width: 360px;
+            width: 320px;
             margin: 0 0 14px 0;
-            padding: 24px 16px 12px 16px;
+            padding: 12px 16px;
             border: 1pt solid #d6d6d6;
             border-radius: 12px;
             font-size: 18px;
@@ -106,9 +109,9 @@
         }
         .placeholder-label {
             position: absolute;
-            top: 16px;
+            top: 12px;
             left: 16px;
-            font-size: 18px;
+            font-size: 16px;
             color: #999;
             transition: all 0.3s ease;
             pointer-events: none; 
@@ -116,7 +119,7 @@
         }
         .input_cover input:focus + .placeholder-label,
         .input_cover input:not(:placeholder-shown) + .placeholder-label{
-            top: 6px;
+            top: -8px;
             font-size: 12px;
             color: #8a8a8a;
         }
@@ -140,10 +143,9 @@
             cursor: pointer;
         }
         .pd_doc{
-            position: absolute;
             padding: 24px 0 0 36px;
-            top: 426px;
-            left: 0;
+            display: flex;
+            gap: 16px;
         }
         .pd_doc a{
             color: #666666;
@@ -166,9 +168,11 @@
     <div class="signup_cover">
         <div class="signup_canvas">
             <div class="signup_info">
-                <img src="img/logo.svg" alt="PANMAX - 판맥스" class="signup_logo">
-                <h1 class="signup_title"><b>판맥스</b> 계정 만들기</h1>
-                <h3 class="signup_subtitle">만나서 반갑습니다!</h3>
+                <div>
+                    <img src="img/logo.svg" alt="PANMAX - 판맥스" class="signup_logo">
+                    <h1 class="signup_title"><b>판맥스</b> 계정 만들기</h1>
+                    <h3 class="signup_subtitle">만나서 반갑습니다!</h3>
+                </div>
                 <div class="pd_doc">
                     <a href="">개인정보 처리방침</a>
                     <a href="">이용약관</a>
@@ -196,17 +200,20 @@
                 </div>
 
                 <h5 class="input_title">기본정보를 입력해주세요.</h5>
-                <div class="input_cover pw_feild">
-                    <input type="text" name="user_pw" id="user_pw-input" placeholder=" ">
-                    <label for="user_pw-input" class="placeholder-label pw_label">이름</label><br>
+                <div class="input_cover">
+                    <input type="text" name="user_name" id="user_name-input" placeholder=" ">
+                    <label for="user_name-input" class="placeholder-label user_name_label">이름</label><br>
                 </div>
-                <div class="input_cover pw_chk_feild">
-                    <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">전화번호</label><br>
+                <div class="input_cover">
+                    <input type="text" name="user_phone" id="user_phone-input" placeholder=" ">
+                    <label for="user_phone-input" class="placeholder-label user_phone_label">전화번호</label><br>
                 </div>
-                <div class="input_cover pw_chk_feild">
-                    <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">스토어 이름</label><br>
+                <div class="input_cover">
+                    <input type="text" name="store_name" id="store_name-input" placeholder=" ">
+                    <label for="store_name-input" class="placeholder-label store_name_label">스토어 이름</label><br>
+                </div>
+                <div class="account_btn_cover">
+                    <button id="login_btn">회원가입 하기</button>
                 </div>
             </div>
         </div>
