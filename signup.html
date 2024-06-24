@@ -89,6 +89,7 @@
         }
         .input_cover{
             position: relative;
+             margin-bottom: 0; /* 추가: 스토어 이름 입력란 아래 간격 제거 */
         }
         .signup_form input{
             width: 100%;
@@ -131,25 +132,31 @@
             cursor: pointer;
             font-size: 14px;
         }
+        .divider {
+    border: none;
+    border-top: 1px solid #d6d6d6;
+    margin: 14px 0; /* 추가: 스토어 이름 입력란과 체크박스 사이에 간격 추가 */
+}
         .terms {
     font-weight: 400;
-    margin: 0; /* 스토어 이름 입력란 바로 아래로 이동 */
+    margin: 0;
     display: flex;
-    flex-direction: column; /* 문구를 한 줄로 나오도록 함 */
-    align-items: flex-start; /* 왼쪽 정렬 */
+    flex-direction: column;
+    align-items: flex-start;
 }
 .terms label {
-    display: flex; 
+    display: flex;
     align-items: center;
-    margin-bottom: 4px; /* 간격을 줄이기 위해 margin-bottom을 줄임 */
+    margin-bottom: 4px;
 }
 .terms input {
-    margin-right: 2px; /* 체크박스와 문구를 아예 붙임 */
+    margin-right: 4px; /* 체크박스와 문구를 아예 붙임 */
 }
 .terms small {
     font-size: 12px; /* 문구를 더 작게 만듭니다 */
     color: #666;
     line-height: 1.2;
+    white-space: nowrap; /* 문구를 일렬로 나타나게 함 */
 }
 
 .signup_btn_cover {
@@ -243,19 +250,18 @@
                     <label for="user_name-input" class="placeholder-label">이름</label>
                 </div>
                 <div class="input_cover">
-                    <input type="text" name="user_phone" id="user_phone-input" placeholder=" ">
-                    <label for="user_phone-input" class="placeholder-label">전화번호</label>
-                </div>
-                <div class="input_cover">
-                    <input type="text" name="store_name" id="store_name-input" placeholder=" ">
-                    <label for="store_name-input" class="placeholder-label">스토어 이름</label>
-                </div>
-                <div class="terms">
-                    <label><input type="checkbox" name="terms_agree1"><small>[필수] 판맥스 이용약관 개인정보처리방침에 동의합니다.</small></label>
-                    <label><input type="checkbox" name="terms_agree2"><small>[선택] 판맥스에서 보내는 경고성 정보 수신에 동의합니다.</small></label>
-                </div>
-                <div class="signup_btn_cover">
-                    <button class="signup_btn">회원가입 하기</button>
+    <input type="text" name="store_name" id="store_name-input" placeholder=" ">
+    <label for="store_name-input" class="placeholder-label">스토어 이름</label>
+</div>
+<hr class="divider">
+<div class="terms">
+    <label><input type="checkbox" name="terms_agree1"><small>[필수] 판맥스 이용약관 개인정보처리방침에 동의합니다.</small></label>
+    <label><input type="checkbox" name="terms_agree2"><small>[선택] 판맥스에서 보내는 광고성 정보 수신에 동의합니다.</small></label>
+</div>
+<div class="signup_btn_cover">
+    <button class="signup_btn">회원가입 하기</button>
+</div>
+
                 </div>
             </div>
         </div>
