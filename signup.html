@@ -131,18 +131,18 @@
             cursor: pointer;
             font-size: 14px;
         }
-        .terms {
-            font-weight: 400;
-            margin: 14px 0 14px 8px;
-        }
         .terms label {
-            display: block; 
-            align-items: center;
-            margin-bottom: 1px; 
-        }
-        .terms input{
-            margin-right: 8px;
-        }
+    display: flex; 
+    align-items: center;
+    margin-bottom: 8px;
+}
+.terms input {
+    margin-right: 8px;
+}
+.terms small {
+    font-size: 14px;
+    color: #666;
+}
         .signup_btn_cover {
             text-align: right;
             margin-top: 20px;
@@ -242,8 +242,8 @@
                     <label for="store_name-input" class="placeholder-label">스토어 이름</label>
                 </div>
                 <div class="terms">
-                    <label><input type="checkbox" name="terms_agree1">[필수] 판맥스 이용약관 개인정보처리방침에 동의합니다.</label>
-                    <label><input type="checkbox" name="terms_agree2">[선택] 판맥스에서 보내는 경고성 정보 수신에 동의합니다.</label>
+                    <label><input type="checkbox" name="terms_agree1"><small>[필수] 판맥스 이용약관 개인정보처리방침에 동의합니다.</small></label>
+                    <label><input type="checkbox" name="terms_agree2"><small>[선택] 판맥스에서 보내는 경고성 정보 수신에 동의합니다.</small></label>
                 </div>
                 <div class="signup_btn_cover">
                     <button class="signup_btn">회원가입 하기</button>
