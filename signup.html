@@ -58,14 +58,11 @@
         .signup_info{
             width: 400px;
             height: 354px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         .signup_form{
             width: 392px;
             margin: 0 0 0 24px;
-            padding: 36px;
+            padding: 74px 36px 60px 36px;
             position: relative;
             font-weight: 400;
         }
@@ -94,24 +91,25 @@
             position: relative;
         }
         .signup_form input{
-            width: 320px;
+            width: 100%;
             margin: 0 0 14px 0;
-            padding: 12px 16px;
+            padding: 24px 16px 12px 16px;
             border: 1pt solid #d6d6d6;
             border-radius: 12px;
             font-size: 18px;
             transition: all 0.3s ease;
             box-sizing: border-box;
             outline: none;
+            display: inline-block;
         }
         .input_cover input:focus{
             border-color: #007bff;
         }
         .placeholder-label {
             position: absolute;
-            top: 12px;
+            top: 16px;
             left: 16px;
-            font-size: 16px;
+            font-size: 18px;
             color: #999;
             transition: all 0.3s ease;
             pointer-events: none; 
@@ -119,38 +117,58 @@
         }
         .input_cover input:focus + .placeholder-label,
         .input_cover input:not(:placeholder-shown) + .placeholder-label{
-            top: -8px;
+            top: 6px;
             font-size: 12px;
             color: #8a8a8a;
         }
-        .forgot_link{
-            display: block;
-            margin: 0 0 12px 8px;
+        .verify-link,
+        .auth-link {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
         }
-        .account_btn_cover{
+        .terms{
+            margin: 24px 0 14px 8px;
+        }
+        .terms label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .terms input{
+            margin-right: 8px;
+        }
+        .signup_btn_cover{
             margin-top: 40px;
-            text-align: right;
+            text-align: center;
         }
-        #login_btn{
+        .signup_btn{
             font-family: inherit;
             background-color: #005FE8;
             color: white;
             border: none;
             border-radius: 20px;
-            padding: 12px 18px;
+            padding: 12px 24px;
             font-weight: 400;
-            margin-left: 44px;
             cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
         }
-        .pd_doc{
-            padding: 24px 0 0 36px;
+        .inline-input {
             display: flex;
-            gap: 16px;
+            align-items: center;
         }
-        .pd_doc a{
-            color: #666666;
-            margin-right: 52px;
-            font-weight: 350;
+        .inline-input input {
+            flex: 1;
+        }
+        .inline-input .verify-link,
+        .inline-input .auth-link {
+            flex: 0 0 auto;
+            margin-left: 8px;
         }
         @media screen and (max-width: 1600px){
 
@@ -168,11 +186,9 @@
     <div class="signup_cover">
         <div class="signup_canvas">
             <div class="signup_info">
-                <div>
-                    <img src="img/logo.svg" alt="PANMAX - 판맥스" class="signup_logo">
-                    <h1 class="signup_title"><b>판맥스</b> 계정 만들기</h1>
-                    <h3 class="signup_subtitle">만나서 반갑습니다!</h3>
-                </div>
+                <img src="img/logo.svg" alt="PANMAX - 판맥스" class="signup_logo">
+                <h1 class="signup_title"><b>판맥스</b> 계정 만들기</h1>
+                <h3 class="signup_subtitle">만나서 반갑습니다!</h3>
                 <div class="pd_doc">
                     <a href="">개인정보 처리방침</a>
                     <a href="">이용약관</a>
@@ -180,44 +196,44 @@
             </div>
             <div class="signup_form">
                 <h5 class="input_title">이메일을 입력해주세요.</h5>
-                <div class="input_cover user_email_feild">
+                <div class="input_cover user_email_feild inline-input">
                     <input type="email" name="user_email" id="user_email-input" pattern=".+@*\.com" required placeholder=" ">
-                    <label for="user_email-input" class="placeholder-label email_label">이메일</label><br>
+                    <label for="user_email-input" class="placeholder-label email_label">이메일</label>
+                    <span class="verify-link">인증번호 전송</span>
                 </div>
-                <div class="input_cover email_check_feild">
+                <div class="input_cover email_check_feild inline-input">
                     <input type="text" name="email_check" id="email_check-input" required placeholder=" ">
-                    <label for="email_check-input" class="placeholder-label email_check_label">인증번호</label><br>
+                    <label for="email_check-input" class="placeholder-label email_check_label">인증번호</label>
+                    <span class="auth-link">인증하기</span>
                 </div>
 
                 <h5 class="input_title">비밀번호를 입력해주세요.</h5>
                 <div class="input_cover pw_feild">
                     <input type="password" name="user_pw" id="user_pw-input" placeholder=" ">
-                    <label for="user_pw-input" class="placeholder-label pw_label">비밀번호</label><br>
+                    <label for="user_pw-input" class="placeholder-label pw_label">비밀번호</label>
                 </div>
                 <div class="input_cover pw_chk_feild">
                     <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">비밀번호 확인</label><br>
+                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">비밀번호 확인</label>
                 </div>
 
                 <h5 class="input_title">기본정보를 입력해주세요.</h5>
                 <div class="input_cover">
                     <input type="text" name="user_name" id="user_name-input" placeholder=" ">
-                    <label for="user_name-input" class="placeholder-label user_name_label">이름</label><br>
+                    <label for="user_name-input" class="placeholder-label">이름</label>
                 </div>
                 <div class="input_cover">
                     <input type="text" name="user_phone" id="user_phone-input" placeholder=" ">
-                    <label for="user_phone-input" class="placeholder-label user_phone_label">전화번호</label><br>
+                    <label for="user_phone-input" class="placeholder-label">전화번호</label>
                 </div>
                 <div class="input_cover">
                     <input type="text" name="store_name" id="store_name-input" placeholder=" ">
-                    <label for="store_name-input" class="placeholder-label store_name_label">스토어 이름</label><br>
+                    <label for="store_name-input" class="placeholder-label">스토어 이름</label>
                 </div>
-                <div class="account_btn_cover">
-                    <button id="login_btn">회원가입 하기</button>
+                <div class="terms">
+                    <label><input type="checkbox" name="terms_agree1">이용약관에 동의합니다</label>
+                    <label><input type="checkbox" name="terms_agree2">개인정보 처리방침에 동의합니다</label>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+                <div class="signup_btn_cover">
+                    <button class="signup_btn">회원가입 하기</button>
+                </div
