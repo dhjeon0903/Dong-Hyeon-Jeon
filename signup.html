@@ -150,6 +150,41 @@
             margin-right: 52px;
             font-weight: 350;
         }
+        .verify-btn,
+        .auth-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 12px 18px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .terms{
+            margin: 24px 0 14px 8px;
+        }
+        .terms input{
+            margin-right: 8px;
+        }
+        .signup_btn_cover{
+            margin-top: 40px;
+            text-align: center;
+        }
+        .signup_btn{
+            font-family: inherit;
+            background-color: #005FE8;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 24px;
+            font-weight: 400;
+            cursor: pointer;
+            font-size: 18px;
+        }
         @media screen and (max-width: 1600px){
 
         }
@@ -178,39 +213,37 @@
                 <h5 class="input_title">이메일을 입력해주세요.</h5>
                 <div class="input_cover user_email_feild">
                     <input type="email" name="user_email" id="user_email-input" pattern=".+@*\.com" required placeholder=" ">
-                    <label for="user_email-input" class="placeholder-label email_label">이메일</label><br>
+                    <label for="user_email-input" class="placeholder-label email_label">이메일</label>
+                    <button class="verify-btn">인증번호 전송</button>
                 </div>
                 <div class="input_cover email_check_feild">
                     <input type="text" name="email_check" id="email_check-input" required placeholder=" ">
-                    <label for="email_check-input" class="placeholder-label email_check_label">인증번호</label><br>
+                    <label for="email_check-input" class="placeholder-label email_check_label">인증번호</label>
+                    <button class="auth-btn">인증하기</button>
                 </div>
 
                 <h5 class="input_title">비밀번호를 입력해주세요.</h5>
                 <div class="input_cover pw_feild">
                     <input type="password" name="user_pw" id="user_pw-input" placeholder=" ">
-                    <label for="user_pw-input" class="placeholder-label pw_label">비밀번호</label><br>
+                    <label for="user_pw-input" class="placeholder-label pw_label">비밀번호</label>
                 </div>
                 <div class="input_cover pw_chk_feild">
                     <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">비밀번호 확인</label><br>
+                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">비밀번호 확인</label>
                 </div>
 
                 <h5 class="input_title">기본정보를 입력해주세요.</h5>
-                <div class="input_cover pw_feild">
-                    <input type="text" name="user_pw" id="user_pw-input" placeholder=" ">
-                    <label for="user_pw-input" class="placeholder-label pw_label">이름</label><br>
+                <div class="input_cover">
+                    <input type="text" name="user_name" id="user_name-input" placeholder=" ">
+                    <label for="user_name-input" class="placeholder-label">이름</label>
                 </div>
-                <div class="input_cover pw_chk_feild">
-                    <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">전화번호</label><br>
+                <div class="input_cover">
+                    <input type="text" name="user_phone" id="user_phone-input" placeholder=" ">
+                    <label for="user_phone-input" class="placeholder-label">전화번호</label>
                 </div>
-                <div class="input_cover pw_chk_feild">
-                    <input type="password" name="pw_chk" id="user_pw_chk-input" placeholder=" ">
-                    <label for="user_pw_chk-input" class="placeholder-label user_pw_chk_label">스토어 이름</label><br>
+                <div class="input_cover">
+                    <input type="text" name="store_name" id="store_name-input" placeholder=" ">
+                    <label for="store_name-input" class="placeholder-label">스토어 이름</label>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+                <div class="terms">
+                    <label><input type="checkbox" name="terms_agree">이용약관에 동의합니다
