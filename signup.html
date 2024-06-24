@@ -150,17 +150,13 @@
             margin-right: 52px;
             font-weight: 350;
         }
-        .verify-btn,
-        .auth-btn {
+        .verify-link,
+        .auth-link {
             position: absolute;
-            right: 0;
+            right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            padding: 12px 18px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 20px;
+            color: #007bff;
             cursor: pointer;
             font-size: 14px;
         }
@@ -214,12 +210,12 @@
                 <div class="input_cover user_email_feild">
                     <input type="email" name="user_email" id="user_email-input" pattern=".+@*\.com" required placeholder=" ">
                     <label for="user_email-input" class="placeholder-label email_label">이메일</label>
-                    <button class="verify-btn">인증번호 전송</button>
+                    <span class="verify-link">인증번호 전송</span>
                 </div>
                 <div class="input_cover email_check_feild">
                     <input type="text" name="email_check" id="email_check-input" required placeholder=" ">
                     <label for="email_check-input" class="placeholder-label email_check_label">인증번호</label>
-                    <button class="auth-btn">인증하기</button>
+                    <span class="auth-link">인증하기</span>
                 </div>
 
                 <h5 class="input_title">비밀번호를 입력해주세요.</h5>
@@ -246,4 +242,5 @@
                     <label for="store_name-input" class="placeholder-label">스토어 이름</label>
                 </div>
                 <div class="terms">
-                    <label><input type="checkbox" name="terms_agree">이용약관에 동의합니다
+                    <label><input type="checkbox" name="terms_agree1">이용약관에 동의합니다</label><br
+                    <label><input type="checkbox" name="terms_agree1">이용약관에 동의합니다</label><br
