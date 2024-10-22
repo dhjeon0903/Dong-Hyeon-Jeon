@@ -284,12 +284,12 @@ header .right-header nav ul li a:hover {
 .collection-carders .content .boxes .card {
     z-index: 1;
     text-align: center !important;
-    background-color: rgba(255, 255, 255, 0.2); /* 기존 0.05에서 0.2로 변경 */
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 24px;
     width: calc(25% - 2rem);
     height: 325px;
     margin: 1rem;
-    padding: 0; /* 패딩 제거 */
+    padding: 0;
     transition: all 0.6s ease; 
     cursor: pointer;
     position: relative;
@@ -330,34 +330,49 @@ header .right-header nav ul li a:hover {
 }
 
 .card {
-    transition: all 0.4s ease; /* 기본 카드 전환 시간 */
+    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transform: scale(1); /* 기본 크기 */
+    transform: scale(1);
 }
 
 .card.expanded {
     position: fixed !important;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1); /* 부드러운 확대 */
+    transform: translate(-50%, -50%);
     width: 80%; 
     height: 80vh;
     z-index: 1001;
     background-color: rgba(255, 255, 255, 0.9);
-    overflow: auto;
+    overflow: hidden;
     pointer-events: auto;
-    transition: all 0.4s ease-in-out; /* 부드러운 확장 애니메이션 */
+    transition: all 0.4s ease-in-out;
 }
 
-.card:hover {
-    transform: none !important; /* Hover 시 transform 제거 */
+.card:not(.expanded):hover {
+    transform: scale(1.05); /* Hover 시 부드러운 확대 */
+    transition: all 0.2s ease;
 }
 
+.collection-carders .content .boxes .card:not(.expanded):hover {
+    transform: scale(1.1) !important; /* Hover 시 확대 */
+    transition: all 0.2s;
+}
+
+.collapse-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    z-index: 1002;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
 
 .collapse-btn:hover {
-    color: #ff6666; /* Hover 시 색 변경 */
+    color: #ff6666;
 }
 
 .overlay {
@@ -370,116 +385,92 @@ header .right-header nav ul li a:hover {
     z-index: 1000;
     display: none;
     opacity: 0;
-    transition: opacity 0.4s ease; /* 오버레이 전환 효과 */
+    transition: opacity 0.4s ease;
 }
 
 .overlay.show {
     display: block;
     opacity: 1;
 }
-.card:not(.expanded):hover {
-    transform: scale(1.05); /* Hover 시 부드러운 확대 */
-    transition: all 0.2s ease;
-}
 
-.collapse-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    z-index: 1002;
-    cursor: pointer;
-    transition: color 0.2s ease; /* 클릭 시 색상 전환 효과 */
-}
 .collection-carders .content .boxes .card .card-text span {
     color: #ccc;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
 }
-.card.expanded:hover {
-    transform: none !important; /* Hover 시 불필요한 transform 제거 */
-}
 
 .collection-carders .content .boxes .card.expanded {
-    z-index: 1001; /* Adjusted z-index */
-    width: 80%; /* Set width */
-    height: 80vh; /* Set height */
-    position: fixed; /* Fixed positioning to prevent movement */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Centering transform */
-    background-color: rgba(255, 255, 255, 0.9); /* Background color */
-    overflow: hidden; /* Prevent overflow */
-    transition: transform 0.4s ease, background-color 0.4s ease; /* Transition effects */
+    z-index: 1001;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
 .collection-carders .content .boxes .card:not(.expanded) {
-    transition: transform 1.0s ease, background-color 1.0s ease, width 1.0s ease, height 1.0s ease; /* 축소 전환 시간 */
+    transition: transform 1.2s ease, background-color 1.2s ease, width 1.2s ease, height 1.2s ease;
 }
 
 .collection-carders .content .boxes .card .card-detail {
-    display: none; /* Hidden by default */
+    display: none;
     padding: 16px;
     text-align: left;
     color: #000;
 }
+
 .collection-carders .content .boxes .card.expanded .card-detail {
-    display: flex; /* Show when expanded */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
-    justify-content: flex-start; /* Align items to the top */
-    position: absolute; /* Positioned absolutely within the card */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(255, 255, 255, 0.9); /* Background color */
-    overflow-y: auto; /* Enable vertical scrolling */
-    z-index: 100000; /* High z-index */
-    padding: 20px; /* Padding around content */
-    scrollbar-width: thin; /* Thin scrollbar */
-}
-.card.collapsing {
-    transition: transform 0.4s ease, background-color 0.4s ease;
-    transform: scale(1); /* 원래 크기로 복원 */
-}
-.card-detail img {
-    width: 40%; /* Image width */
-    height: auto; /* Auto height */
-    margin-bottom: 20px; /* Space below images */
-    border-radius: 8px; /* Rounded corners */
-}
-.card.expanding {
-    transition: transform 0.4s ease; /* Match the timing with your JS */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-y: auto;
+    max-height: 100%;
+    z-index: 100000;
+    padding: 20px;
+    scrollbar-width: thin;
 }
 
-.collection-carders .content .boxes .card:hover {
-    transform: scale(1.1) !important; /* Scale on hover */
-    transition: all 0.2s; /* Transition for hover effect */
-}
 .card-detail {
-    overflow-y: auto; /* 세로 스크롤 허용 */
-    height: 100%; /* 카드 전체 높이 사용 */
+    overflow-y: auto;
+    height: 100%;
     padding: 20px;
 }
-/* Media queries for responsive design */
+
+.card-detail img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
 @media screen and (max-width: 64rem) {
     .collection-carders .content .boxes .card {
-        width: calc(50% - 2rem); /* Adjust width for smaller screens */
+        width: calc(50% - 2rem);
     }
 }
 
 @media screen and (max-width: 48rem) {
     .collection-carders .content .boxes .card {
-        width: calc(100% - 2rem); /* Adjust width for very small screens */
+        width: calc(100% - 2rem);
     }
 }
 
 @media screen and (max-width: 32rem) {
     .collection-carders .content .boxes .card {
-        width: 100%; /* Full width for very small screens */
-        margin: 0 0 2rem 0; /* Bottom margin */
+        width: 100%;
+        margin: 0 0 2rem 0;
     }
 }
 /* -------------------------img-zigzag----------------------- */
