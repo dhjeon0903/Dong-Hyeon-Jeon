@@ -1286,7 +1286,77 @@ details[open] div {
     width: 24px;
 }
 
+.research-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
 
+.research-card {
+    max-width: 900px;
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1b0033, #120022);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 80px rgba(140, 0, 255, 0.3);
+}
+
+.research-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.research-subtitle {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.research-tech {
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.research-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #6a00ff, #d400ff);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    border: 1px solid #8f00ff;
+    color: #c28cff;
+}
+
+.btn-secondary:hover {
+    background: rgba(140,0,255,0.1);
+}
 
 /* ----------------------footer---------------- */
 footer {
