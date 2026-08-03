@@ -16,9 +16,9 @@
 <body>
     <script>
   (function() {
-    var pw = prompt("접속 비밀번호를 입력해 주세요:");
+    var pw = prompt("Password:");
     if (pw !== "0903") {
-      alert("올바르지 않은 비밀번호입니다.");
+      alert("Wrong");
       document.body.innerHTML = "<div style='display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif;'><h1>403 Forbidden - Access Denied</h1></div>";
       window.stop();
     }
