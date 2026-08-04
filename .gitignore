@@ -4,3 +4,7 @@ dist/
 build/
 .venv/
 .Rhistory
+.DS_Store
+*.bak
+index.html.bak
+shot-*.png
